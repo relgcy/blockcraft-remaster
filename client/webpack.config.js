@@ -15,12 +15,15 @@ module.exports = (env, argv) => {
     devServer: {
       compress: true,
       port: 3001,
-      proxy: {
-        "/socket.io": {
+      // --- MODIFIED SECTION START ---
+      proxy: [ // Changed to an array
+        {
+          context: ["/socket.io"], // Use 'context' for path matching
           target: "http://localhost:3002",
-          ws: true,
+          ws: true, // Keep WebSocket proxying enabled
         },
-      },
+      ],
+      // --- MODIFIED SECTION END ---
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Cross-Origin-Embedder-Policy": "require-corp",

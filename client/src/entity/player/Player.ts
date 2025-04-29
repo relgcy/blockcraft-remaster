@@ -86,7 +86,7 @@ class Player {
 
   // Mesh velocity, rotation, and direction
   vel = new THREE.Vector3();
-  rot = new THREE.Vector3();
+  rot = new THREE.Vector3(); // Assuming this should store Euler x,y,z
   dir = new THREE.Vector3();
   localVel = new THREE.Vector3();
 
@@ -1322,7 +1322,10 @@ class Player {
     this.blocking = player.isBlocking > 0;
     this.walking = new THREE.Vector3(player.velocity.x, 0, player.velocity.z).length() > 2;
     this.sneaking = keyPressedPlayer("alt");
-    this.rot = this.controls.getObject().rotation.toVector3();
+    // --- Fix: Use .set() to copy Euler components to the Vector3 'rot' ---
+    const eulerRotation = this.controls.getObject().rotation; // Get the Euler object
+    this.rot.set(eulerRotation.x, eulerRotation.y, eulerRotation.z); // Set components of this.rot
+    // --- End Fix ---
     camera.getWorldDirection(this.dir);
     if (this.perspective == 2) this.dir.y *= -1;
     this.vel = this.newMove;

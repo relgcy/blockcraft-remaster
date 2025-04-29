@@ -24,7 +24,6 @@
         <div id="gui"></div>
         <div class="outer-container">
             <div class="container">
-                <!-- Menu -->
                 <div id="menu" class="tab-container">
                     <div id="nav">
                         <button class="tablinks" id="welcome-button">Welcome</button>
@@ -32,7 +31,6 @@
                     </div>
 
                     <div id="welcome" class="tabcontent">
-                        <!-- <h1 id="title">BlockCraft</h1> -->
                         <p>BlockCraft is a WebGL implementation of a procedurally-generated voxel world that runs on the web browser. This project started off as a Minecraft Classic clone but has evolved to include multiplayer PvP, crafting, shaders and
                             much more!</p>
                         <p>BlockCraft is not affiliated with (or supported by) Mojang AB, Minecraft, or Microsoft in any way. Any assets from Minecraft are used under fair use and in accordance with <a cross-origin="anonymous" href="https://account.mojang.com/documents/minecraft_eula"
@@ -50,7 +48,6 @@
                     <div id="changelog" class="tabcontent" style="display: none;"></div>
                 </div>
 
-                <!-- Server select -->
                 <div id="server-select" class="tab-container" style="display:none">
                     <div id="nav">
                         <button class="tablinks" style="width: 100%;" id="server-button">Server Select</button>
@@ -68,7 +65,6 @@
                     <div id="changelog" class="tabcontent" style="display: none;"></div>
                 </div>
 
-                <!-- Settings -->
                 <div id="settings" class="tab-container" style="display:none">
                     <div id="nav">
                         <button class="tablinks" id="video-button">Video</button>
@@ -79,7 +75,7 @@
                         <div id="reset-video" class="top-button">Reset to Default</div>
                         <div class="control-container">
                             <span id="mouseSensValue" class="slider-text">Mouse Sensitivity: 50</span>
-                            <input type="range" min="1" max="100" value="50" class="slider" id="mouseSensSlider" style="position: relative; float: right; width: 50%; height: 20px">
+                            <input type="range" min="1" max="300" value="50" class="slider" id="mouseSensSlider" style="position: relative; float: right; width: 50%; height: 20px">
                         </div>
                         <div class="control-container">
                             <span id="scrollSensValue" class="slider-text">Scroll Sensitivity: 8</span>
@@ -101,20 +97,20 @@
                         <div class="control-container">
                             <span id="guiSizeValue" class="slider-text">GUI Size:</span>
                             <select id="guiSizeSelect" type="select" class="select" style="position: relative; float: right; width: 130px; height: 30px">
-									<option value="1">Small</option>
-									<option value="2" selected="selected">Medium</option>
-									<option value="3">Large</option>
-								</select>
+                                    <option value="1">Small</option>
+                                    <option value="2" selected="selected">Medium</option>
+                                    <option value="3">Large</option>
+                                </select>
                         </div>
                         <div class="control-container">
                             <span id="textureValue" class="slider-text">Material Texture:</span>
                             <select id="textureSelect" type="select" class="select" style="position: relative; float: right; width: 130px; height: 30px">
-									<option value="basic">Basic</option>
-									<option value="lambert" selected="selected">Lambert</option>
-									<option value="phong">Phong</option>
-									<option value="standard">Standard</option>
-									<option value="toon">Toon</option>
-								</select>
+                                    <option value="basic">Basic</option>
+                                    <option value="lambert" selected="selected">Lambert</option>
+                                    <option value="phong">Phong</option>
+                                    <option value="standard">Standard</option>
+                                    <option value="toon">Toon</option>
+                                </select>
                         </div>
 
                         <div id="switch-container" class="flex-container">
@@ -127,7 +123,6 @@
                     </div>
                 </div>
             </div>
-            <!-- User Input and Start Button -->
             <div id="input-container">
                 <input autocomplete="off" id="name-input" class="input" type="text" placeholder="Enter Username" maxlength="20" onkeypress="return /[a-z 0-9]/i.test(event.key)">
                 <input autocomplete="off" id="direct-connect-input" class="input" type="text" placeholder="Direct Connect (optional)" maxlength="50" style="display: none;">
