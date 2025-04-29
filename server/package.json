@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/victoryqwei/Interplanetarium#readme",
   "dependencies": {
-    "axios": "^0.25.0",
+    "axios": "^1.9.0",
     "bad-words": "^3.0.4",
     "colors": "^1.4.0",
     "dotenv": "^14.2.0",
@@ -30,6 +30,6 @@
     "winston": "^3.4.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^3.1.10"
   }
 }

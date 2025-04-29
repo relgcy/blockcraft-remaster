@@ -1318,19 +1318,37 @@ class Player {
   }
 
   updatePlayerMesh() {
+    // Existing logic
     this.punching = player.punchT < 2;
     this.blocking = player.isBlocking > 0;
     this.walking = new THREE.Vector3(player.velocity.x, 0, player.velocity.z).length() > 2;
-    this.sneaking = keyPressedPlayer("alt");
-    this.rot = this.controls.getObject().rotation.toVector3();
+    this.sneaking = keyPressedPlayer("alt"); // Assuming keyPressedPlayer is defined elsewhere
+
+    // --- FIXED LINE ---
+    // Get the Euler rotation object from the controls
+    const playerRotation = this.controls.getObject().rotation;
+    // Store the x, y, z rotation angles in this.rot as a Vector3
+    // This replaces the non-existent '.toVector3()' call.
+    this.rot = new THREE.Vector3(playerRotation.x, playerRotation.y, playerRotation.z);
+    // --- END FIXED LINE ---
+
+    // Existing logic: Get the world direction (already correctly done)
     camera.getWorldDirection(this.dir);
-    if (this.perspective == 2) this.dir.y *= -1;
+
+    // Existing logic: Adjust direction based on perspective
+    if (this.perspective == 2) {
+      this.dir.y *= -1;
+    }
+
+    // Existing logic
     this.vel = this.newMove;
     this.localVel = this.velocity;
 
-    if (this.perspective == 0) return;
-    PlayerManager.updatePlayer(this);
-  }
+    // Existing logic: Update player visualization if not in first person
+    if (this.perspective == 0) return; // Assuming perspective 0 is first-person
+    PlayerManager.updatePlayer(this); // Assuming PlayerManager is defined elsewhere
+}
+
 
   update(delta) {
     if (this.hp <= 0 || !g.initialized || !g.joined || !isState("inGame")) return;
