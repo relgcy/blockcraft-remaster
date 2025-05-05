@@ -1,7 +1,7 @@
 {
   "name": "blockcraft",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "A Minecraft Classic Spinoff",
   "main": "app.js",
   "dependencies": {
     "axios": "^1.9.0",
@@ -21,20 +21,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/victoryqwei/Interplanetarium.git"
+    "url": "git+https://github.com/relgcy/blockcraft-remaster.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/victoryqwei/Interplanetarium/issues"
+    "url": "https://github.com/relgcy/blockcraft-remaster/issues"
   },
-  "homepage": "https://github.com/victoryqwei/Interplanetarium#readme",
+  "homepage": "https://github.com/relgcy/blockcraft-remaster#readme",
   "devDependencies": {
     "@types/dat.gui": "^0.7.13",
     "@types/howler": "^2.2.12",
     "@types/js-cookie": "^3.0.6",
     "@types/lodash": "^4.17.16",
     "@types/ola": "^1.2.3",
+    "@types/jquery": "^3.5.30",
     "@types/three": "^0.176.0",
     "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.2",
